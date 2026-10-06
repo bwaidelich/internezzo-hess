@@ -1,1 +1,23 @@
-prototype(Internezzo.HessMaster:Document.Location) < prototype(Internezzo.HessMaster:Document.AbstractPage)
+# Backend preview of a master location (the master site has no public frontend)
+prototype(Internezzo.HessMaster:Document.Location) < prototype(Internezzo.HessMaster:Document.AbstractPage) {
+  body.content >
+  body.content = Neos.Fusion:Component {
+    languages = ${Configuration.setting('Internezzo.HessMaster.locations.languages')}
+    sites = ${q(node).property('sites')}
+
+    renderer = afx`
+      <h1>{q(node).property('title')}</h1>
+      <table>
+        <tr><th>Language</th><th>Title</th><th>URL path segment</th></tr>
+        <Neos.Fusion:Loop items={props.languages} itemName="language">
+          <tr>
+            <td>{language}</td>
+            <td>{q(node).property('title_' + language)}</td>
+            <td>{q(node).property('uriPathSegment_' + language)}</td>
+          </tr>
+        </Neos.Fusion:Loop>
+      </table>
+      <p>Sites: {props.sites ? Array.join(props.sites, ', ') : '-'}</p>
+    `
+  }
+}

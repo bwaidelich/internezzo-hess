@@ -1,9 +1,8 @@
 prototype(Internezzo.HessNutzfahrzeuge:Document.Locations) < prototype(Internezzo.HessNutzfahrzeuge:Document.AbstractPage) {
   body.content >
   body.content = Neos.Fusion:Component {
-    # Depending on Internezzo.HessMaster.locations.strategy either the reference documents underneath this document ('reference')
-    # or the master locations that are assigned to this site via their "sites" property ('virtual')
-    locations = ${Configuration.setting('Internezzo.HessMaster.locations.strategy') == 'reference' ? q(node).children('[instanceof Internezzo.HessMaster:Document.LocationReference]').get() : q(site).parent().children('internezzo-hessmaster').children('locations').children('[instanceof Internezzo.HessMaster:Document.Location]').filter('[sites *= "' + site.name + '"]').get()}
+    # The reference documents of the master locations (see Internezzo\HessMaster\Service\LocationReferenceSynchronizer)
+    locations = ${q(node).children('[instanceof Internezzo.HessMaster:Document.LocationReference]').get()}
 
     renderer = afx`
       <h2>Hess Nutzfahrzeuge Standorte:</h2>
@@ -16,8 +15,7 @@ prototype(Internezzo.HessNutzfahrzeuge:Document.Locations) < prototype(Internezz
       </ul>
     `
 
-    # The list depends on the location documents of the master site (virtual strategy) or on the reference
-    # documents underneath this document (reference strategy), so changes there have to flush this page
+    # The list depends on the reference documents underneath this document, so changes there have to flush this page
     @cache {
       mode = 'cached'
       entryIdentifier {
@@ -25,8 +23,7 @@ prototype(Internezzo.HessNutzfahrzeuge:Document.Locations) < prototype(Internezz
       }
       entryTags {
         1 = ${Neos.Caching.nodeTag(node)}
-        2 = ${Neos.Caching.nodeTypeTag('Internezzo.HessMaster:Document.Location', node)}
-        3 = ${Neos.Caching.descendantOfTag(node)}
+        2 = ${Neos.Caching.descendantOfTag(node)}
       }
     }
   }

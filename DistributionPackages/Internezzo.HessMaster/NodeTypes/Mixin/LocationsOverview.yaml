@@ -1,7 +1,6 @@
 # Marks a document as "Locations" overview of a non-master site.
-# Depending on the Internezzo.HessMaster.locations.strategy setting, the master location documents are either
-# rendered as virtual sub pages of documents with this mixin (see Internezzo\HessMaster\Routing\LocationAwareFrontendNodeRoutePartHandler)
-# or referenced by Internezzo.HessMaster:Document.LocationReference documents underneath it
+# The master locations are referenced by Internezzo.HessMaster:Document.LocationReference documents underneath it
+# (see Internezzo\HessMaster\Service\LocationReferenceSynchronizer)
 'Internezzo.HessMaster:Mixin.LocationsOverview':
   abstract: true
   constraints:

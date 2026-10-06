@@ -10,20 +10,22 @@ use Neos\ContentRepository\Domain\Service\ContextFactoryInterface;
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Cli\CommandController;
 use Neos\Flow\Persistence\PersistenceManagerInterface;
+use Neos\Neos\Domain\Service\SiteService;
 
 /**
  * Maintenance commands for the location reference documents of the local sites
- * (see Internezzo.HessMaster.locations.strategy)
+ * (see Internezzo\HessMaster\Service\LocationReferenceSynchronizer)
  */
 class LocationCommandController extends CommandController
 {
     private const LOCATION_NODE_TYPE = 'Internezzo.HessMaster:Document.Location';
+    private const MASTER_LOCATIONS_NODE_NAME = 'locations';
 
     /**
-     * @Flow\InjectConfiguration(package="Internezzo.HessMaster", path="routing.masterLocationsNodePath")
+     * @Flow\InjectConfiguration(package="Internezzo.HessMaster", path="locations.masterSiteNodeName")
      * @var string
      */
-    protected $masterLocationsNodePath;
+    protected $masterSiteNodeName;
 
     /**
      * @Flow\Inject
@@ -53,17 +55,12 @@ class LocationCommandController extends CommandController
      * Create/update/remove the location reference documents of all master locations
      *
      * Iterates over all master locations (in all dimensions of the given workspace) and synchronizes their
-     * reference documents in the local sites according to their "sites" property.
-     * Requires the setting Internezzo.HessMaster.locations.strategy to be "reference".
+     * reference documents in all languages of the local sites according to their "sites" property.
      *
      * @param string $workspace Name of the workspace to synchronize
      */
     public function syncReferencesCommand(string $workspace = 'live'): void
     {
-        if (!$this->synchronizer->isActive()) {
-            $this->outputLine('<error>The reference strategy is not active, set Internezzo.HessMaster.locations.strategy to "reference" first.</error>');
-            $this->quit(1);
-        }
         $this->forEachLocation($workspace, function (NodeInterface $locationNode, string $dimensions) {
             $this->outputLine('%s [%s]: %s', [$locationNode->getLabel(), $dimensions, $this->formatResult($this->synchronizer->synchronize($locationNode))]);
         });
@@ -75,8 +72,7 @@ class LocationCommandController extends CommandController
      * Remove the location reference documents of all master locations
      *
      * Removes the automatically created reference documents in the local sites (in all dimensions of the given
-     * workspace), for example before switching Internezzo.HessMaster.locations.strategy back to "virtual".
-     * Manually created reference documents are not affected.
+     * workspace). Manually created reference documents are not affected.
      *
      * @param string $workspace Name of the workspace to clean up
      */
@@ -101,7 +97,7 @@ class LocationCommandController extends CommandController
                 'invisibleContentShown' => true,
                 'inaccessibleContentShown' => true,
             ]);
-            $masterLocationsNode = $context->getNode($this->masterLocationsNodePath);
+            $masterLocationsNode = $context->getNode(SiteService::SITES_ROOT_PATH . '/' . $this->masterSiteNodeName . '/' . self::MASTER_LOCATIONS_NODE_NAME);
             if ($masterLocationsNode === null) {
                 continue;
             }

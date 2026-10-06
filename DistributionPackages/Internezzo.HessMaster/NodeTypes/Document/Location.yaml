@@ -1,16 +1,101 @@
+# Master location, only exists in the language independent dimension of the master site.
+# Translatable properties are stored with a language suffix (see Internezzo.HessMaster.locations.languages).
+# "title" and "uriPathSegment" are derived from the primary language and the "uriPathSegment_*" properties are
+# generated from the corresponding title if empty (see Internezzo\HessMaster\Service\LocationPropertyNormalizer)
 'Internezzo.HessMaster:Document.Location':
   superTypes:
     'Neos.Neos:Document': true
   ui:
     icon: location-pin
     label: 'Location'
-  childNodes:
-    main:
-      type: 'Neos.Neos:ContentCollection'
+    # The translated titles are part of the creation dialog instead
+    creationDialog:
+      elements:
+        title: ~
+  options:
+    nodeCreationHandlers:
+      # "title" and "uriPathSegment" are derived from the translated properties
+      documentTitle: ~
+  label: "${q(node).property('title_de') || Neos.Node.labelForNode(node)}"
   properties:
-    # Node names of the local sites (e.g. "internezzo-hessbus") this location appears in.
-    # Only locations assigned to a site are listed there and reachable as virtual sub pages
-    # of its locations overview (see Internezzo\HessMaster\Routing\LocationAwareFrontendNodeRoutePartHandler)
+    title:
+      ui:
+        showInCreationDialog: false
+        inspector: ~
+    uriPathSegment:
+      ui:
+        inspector: ~
+    title_de:
+      type: string
+      ui:
+        label: 'Title (DE)'
+        reloadPageIfChanged: true
+        showInCreationDialog: true
+        inspector:
+          group: document
+          position: 10
+      validation: &titleValidation
+        'Neos.Neos/Validation/NotEmptyValidator': []
+        'Neos.Neos/Validation/StringLengthValidator':
+          minimum: 1
+          maximum: 255
+    title_fr:
+      type: string
+      ui:
+        label: 'Title (FR)'
+        reloadPageIfChanged: true
+        showInCreationDialog: true
+        inspector:
+          group: document
+          position: 20
+      validation: *titleValidation
+    title_it:
+      type: string
+      ui:
+        label: 'Title (IT)'
+        reloadPageIfChanged: true
+        showInCreationDialog: true
+        inspector:
+          group: document
+          position: 30
+      validation: *titleValidation
+    uriPathSegment_de:
+      type: string
+      ui:
+        label: 'URL path segment (DE)'
+        help: &uriPathSegmentHelp
+          message: 'Generated from the corresponding title if empty'
+        reloadPageIfChanged: true
+        inspector:
+          group: document
+          position: 40
+      validation: &uriPathSegmentValidation
+        'Neos.Neos/Validation/StringLengthValidator':
+          maximum: 255
+        'Neos.Neos/Validation/RegularExpressionValidator':
+          regularExpression: '/^[a-z0-9\-]*$/i'
+    uriPathSegment_fr:
+      type: string
+      ui:
+        label: 'URL path segment (FR)'
+        help: *uriPathSegmentHelp
+        reloadPageIfChanged: true
+        inspector:
+          group: document
+          position: 50
+      validation: *uriPathSegmentValidation
+    uriPathSegment_it:
+      type: string
+      ui:
+        label: 'URL path segment (IT)'
+        help: *uriPathSegmentHelp
+        reloadPageIfChanged: true
+        inspector:
+          group: document
+          position: 60
+      validation: *uriPathSegmentValidation
+    # Node names of the local sites (e.g. "internezzo-hessbus") this location appears in
+    # (see Internezzo\HessMaster\Service\LocationReferenceSynchronizer)
     sites:
       type: array
       defaultValue: []
@@ -21,7 +106,7 @@
         showInCreationDialog: true
         inspector:
           group: document
-          position: 50
+          position: 70
           editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             multiple: true

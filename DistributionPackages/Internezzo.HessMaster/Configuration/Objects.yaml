@@ -1,3 +1,15 @@
-# Render master locations as virtual sub pages of the "Locations" document of every other site
-Neos\Neos\Routing\FrontendNodeRoutePartHandlerInterface:
-  className: Internezzo\HessMaster\Routing\LocationAwareFrontendNodeRoutePartHandler
+# Only provide the content dimension presets of the current site (see Internezzo.HessMaster.dimensionPresetsBySite)
+'Neos\ContentRepository\Domain\Service\ContentDimensionPresetSourceInterface':
+  className: Internezzo\HessMaster\Domain\Service\SiteAwareContentDimensionPresetSource
+
+'Neos\Neos\Domain\Service\ContentDimensionPresetSourceInterface':
+  className: Internezzo\HessMaster\Domain\Service\SiteAwareContentDimensionPresetSource
+
+Internezzo\HessMaster\Domain\Service\SiteAwareContentDimensionPresetSource:
+  properties:
+    configuration:
+      setting: Neos.ContentRepository.contentDimensions
+
+# Use the default dimension values of the current site for contexts without explicit dimensions
+'Neos\ContentRepository\Domain\Service\ContextFactoryInterface':
+  className: Internezzo\HessMaster\Domain\Service\SiteAwareContentContextFactory

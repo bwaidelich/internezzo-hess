@@ -1,17 +1,35 @@
 Internezzo:
   HessMaster:
-    routing:
-      # Absolute node path of the master "Locations" document that holds the actual location documents
-      masterLocationsNodePath: '/sites/internezzo-hessmaster/locations'
+    # Content dimension presets available in each site (indexed by site node name and dimension name).
+    # The first preset is the default of the site unless the global default preset is allowed.
+    # Sites that are not listed here can use all presets.
+    # See Internezzo\HessMaster\Domain\Service\SiteAwareContentDimensionPresetSource
+    dimensionPresetsBySite:
+      'internezzo-hessmaster':
+        language: ['mul']
+      'internezzo-hessbus':
+        language: ['de', 'fr', 'it']
+      'internezzo-hessnutzfahrzeuge':
+        language: ['de', 'fr', 'it']
     locations:
-      # How master locations are made available in the local sites:
-      #
-      # 'virtual':   The master location documents are rendered as virtual sub pages of each local site's
-      #              locations overview (see Internezzo\HessMaster\Routing\LocationAwareFrontendNodeRoutePartHandler).
-      #              No nodes are created in the local sites.
-      # 'reference': A "Internezzo.HessMaster:Document.LocationReference" document is created underneath each local
-      #              site's locations overview for every assigned site. Those documents reference the master location
-      #              and are kept in sync (see Internezzo\HessMaster\Service\LocationReferenceSynchronizer).
-      #              After switching, run "./flow location:syncreferences" to create references for existing locations.
-      #              Before switching back to 'virtual', run "./flow location:removereferences".
-      strategy: 'reference'
+      # Node name of the master site. Its "locations" document holds the actual location documents which only exist
+      # in the language independent dimension (see Internezzo.HessMaster.dimensionPresetsBySite)
+      masterSiteNodeName: 'internezzo-hessmaster'
+      # Language presets of the translatable location properties (e.g. "title_de"). The first one is the primary
+      # language that the inherited "title" and "uriPathSegment" properties of the master location are derived from
+      languages: ['de', 'fr', 'it']
+
+Neos:
+  ContentRepository:
+    contentDimensions:
+      'language':
+        presets:
+          # Language independent content (e.g. the master locations), only available in the master site
+          'mul':
+            label: 'Mehrsprachig'
+            values: ['mul_zz']
+            uriSegment: 'mul'
+            position: 'end'
+  Fusion:
+    defaultContext:
+      'Internezzo.HessMaster.Location': 'Internezzo\HessMaster\Eel\LocationHelper'

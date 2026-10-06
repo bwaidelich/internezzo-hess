@@ -3,6 +3,19 @@
  <site name="Hess Bus" state="1" siteResourcesPackageKey="Internezzo.HessBus" siteNodeName="internezzo-hessbus">
   <nodes formatVersion="2.0">
    <node identifier="2ec00dcf-233c-4118-9d78-0fe390403fe6" nodeName="internezzo-hessbus">
+    <variant sortingIndex="100" workspace="live" nodeType="Internezzo.HessBus:Document.Homepage" version="2" removed="" hidden="" hiddenInIndex="">
+     <dimensions>
+      <language>fr</language>
+     </dimensions>
+     <accessRoles __type="array"/>
+     <creationDateTime __type="object" __classname="DateTime">2026-09-16T16:19:02+02:00</creationDateTime>
+     <lastModificationDateTime __type="object" __classname="DateTime">2026-09-23T12:43:41+02:00</lastModificationDateTime>
+     <lastPublicationDateTime __type="object" __classname="DateTime">2026-09-23T12:43:41+02:00</lastPublicationDateTime>
+     <properties>
+      <title __type="string">Home</title>
+      <uriPathSegment __type="string">home-1</uriPathSegment>
+     </properties>
+    </variant>
     <variant sortingIndex="100" workspace="live" nodeType="Internezzo.HessBus:Document.Homepage" version="1" removed="" hidden="" hiddenInIndex="">
      <dimensions>
       <language>de</language>
@@ -28,6 +41,75 @@
        <title __type="string">Locations</title>
       </properties>
      </variant>
+     <variant sortingIndex="200" workspace="live" nodeType="Internezzo.HessBus:Document.Locations" version="2" removed="" hidden="" hiddenInIndex="">
+      <dimensions>
+       <language>fr</language>
+      </dimensions>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2026-09-23T12:24:21+02:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2026-09-23T12:43:41+02:00</lastModificationDateTime>
+      <lastPublicationDateTime __type="object" __classname="DateTime">2026-09-23T12:43:41+02:00</lastPublicationDateTime>
+      <properties>
+       <uriPathSegment __type="string">locations</uriPathSegment>
+       <title __type="string">Locations</title>
+      </properties>
+     </variant>
+     <node identifier="e49703fe-e03b-832e-152f-caf5aae91ece" nodeName="location-5e8b36ea-c591-4c14-bb3f-949cae7f7457">
+      <variant sortingIndex="300" workspace="live" nodeType="Internezzo.HessMaster:Document.LocationReference" version="1" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2026-10-06T12:01:00+02:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2026-10-06T12:01:00+02:00</lastModificationDateTime>
+       <properties>
+        <uriPathSegment __type="string">location-02</uriPathSegment>
+        <location __type="string">5e8b36ea-c591-4c14-bb3f-949cae7f7457</location>
+        <title __type="string">Location 02</title>
+       </properties>
+      </variant>
+      <variant sortingIndex="400" workspace="live" nodeType="Internezzo.HessMaster:Document.LocationReference" version="1" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>fr</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2026-10-06T12:01:00+02:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2026-10-06T12:01:00+02:00</lastModificationDateTime>
+       <properties>
+        <uriPathSegment __type="string">location-02</uriPathSegment>
+        <location __type="string">5e8b36ea-c591-4c14-bb3f-949cae7f7457</location>
+        <title __type="string">Location 02 (FR)</title>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="2893d746-9a01-5292-a9a7-0e07ab49e8ab" nodeName="location-990a25cf-aa14-446a-ba5e-fdb52db0acbe">
+      <variant sortingIndex="100" workspace="live" nodeType="Internezzo.HessMaster:Document.LocationReference" version="1" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2026-10-06T12:01:00+02:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2026-10-06T12:01:00+02:00</lastModificationDateTime>
+       <properties>
+        <uriPathSegment __type="string">location-01</uriPathSegment>
+        <location __type="string">990a25cf-aa14-446a-ba5e-fdb52db0acbe</location>
+        <title __type="string">Location 01</title>
+       </properties>
+      </variant>
+      <variant sortingIndex="200" workspace="live" nodeType="Internezzo.HessMaster:Document.LocationReference" version="1" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>fr</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2026-10-06T12:01:00+02:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2026-10-06T12:01:00+02:00</lastModificationDateTime>
+       <properties>
+        <uriPathSegment __type="string">location-01</uriPathSegment>
+        <location __type="string">990a25cf-aa14-446a-ba5e-fdb52db0acbe</location>
+        <title __type="string">Location 01</title>
+       </properties>
+      </variant>
+     </node>
     </node>
     <node identifier="9e9aea07-cb56-d26c-9578-f26945630136" nodeName="main">
      <variant sortingIndex="300" workspace="live" nodeType="Neos.Neos:ContentCollection" version="2" removed="" hidden="" hiddenInIndex="">
@@ -39,6 +121,16 @@
       <lastModificationDateTime __type="object" __classname="DateTime">2026-09-23T12:24:21+02:00</lastModificationDateTime>
       <properties/>
      </variant>
+     <variant sortingIndex="300" workspace="live" nodeType="Neos.Neos:ContentCollection" version="2" removed="" hidden="" hiddenInIndex="">
+      <dimensions>
+       <language>fr</language>
+      </dimensions>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2026-09-16T16:21:24+02:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2026-09-23T12:43:41+02:00</lastModificationDateTime>
+      <lastPublicationDateTime __type="object" __classname="DateTime">2026-09-23T12:43:41+02:00</lastPublicationDateTime>
+      <properties/>
+     </variant>
     </node>
    </node>
   </nodes>
@@ -48,7 +140,7 @@
    <node identifier="52e1bb01-6c88-45f6-a743-a7abd20fc464" nodeName="internezzo-hessmaster">
     <variant sortingIndex="100" workspace="live" nodeType="Internezzo.HessMaster:Document.Homepage" version="1" removed="" hidden="" hiddenInIndex="">
      <dimensions>
-      <language>de</language>
+      <language>mul_zz</language>
      </dimensions>
      <accessRoles __type="array"/>
      <creationDateTime __type="object" __classname="DateTime">2026-09-16T16:14:32+02:00</creationDateTime>
@@ -58,60 +150,10 @@
       <uriPathSegment __type="string">home</uriPathSegment>
      </properties>
     </variant>
-    <variant sortingIndex="100" workspace="live" nodeType="Internezzo.HessMaster:Document.Homepage" version="2" removed="" hidden="" hiddenInIndex="">
-     <dimensions>
-      <language>it</language>
-     </dimensions>
-     <accessRoles __type="array"/>
-     <creationDateTime __type="object" __classname="DateTime">2026-09-16T16:14:32+02:00</creationDateTime>
-     <lastModificationDateTime __type="object" __classname="DateTime">2026-09-16T16:29:51+02:00</lastModificationDateTime>
-     <lastPublicationDateTime __type="object" __classname="DateTime">2026-09-16T16:29:51+02:00</lastPublicationDateTime>
-     <properties>
-      <title __type="string">Home</title>
-      <uriPathSegment __type="string">home</uriPathSegment>
-     </properties>
-    </variant>
-    <variant sortingIndex="100" workspace="live" nodeType="Internezzo.HessMaster:Document.Homepage" version="2" removed="" hidden="" hiddenInIndex="">
-     <dimensions>
-      <language>fr</language>
-     </dimensions>
-     <accessRoles __type="array"/>
-     <creationDateTime __type="object" __classname="DateTime">2026-09-16T16:14:32+02:00</creationDateTime>
-     <lastModificationDateTime __type="object" __classname="DateTime">2026-09-16T16:29:51+02:00</lastModificationDateTime>
-     <lastPublicationDateTime __type="object" __classname="DateTime">2026-09-16T16:29:51+02:00</lastPublicationDateTime>
-     <properties>
-      <title __type="string">Home</title>
-      <uriPathSegment __type="string">home</uriPathSegment>
-     </properties>
-    </variant>
     <node identifier="71882296-1aab-72fa-f221-88d93fed8a45" nodeName="locations">
      <variant sortingIndex="400" workspace="live" nodeType="Internezzo.HessMaster:Document.Locations" version="1" removed="" hidden="" hiddenInIndex="">
       <dimensions>
-       <language>de</language>
-      </dimensions>
-      <accessRoles __type="array"/>
-      <creationDateTime __type="object" __classname="DateTime">2026-09-23T12:24:21+02:00</creationDateTime>
-      <lastModificationDateTime __type="object" __classname="DateTime">2026-09-23T12:24:21+02:00</lastModificationDateTime>
-      <properties>
-       <uriPathSegment __type="string">locations</uriPathSegment>
-       <title __type="string">Locations</title>
-      </properties>
-     </variant>
-     <variant sortingIndex="500" workspace="live" nodeType="Internezzo.HessMaster:Document.Locations" version="1" removed="" hidden="" hiddenInIndex="">
-      <dimensions>
-       <language>fr</language>
-      </dimensions>
-      <accessRoles __type="array"/>
-      <creationDateTime __type="object" __classname="DateTime">2026-09-23T12:24:21+02:00</creationDateTime>
-      <lastModificationDateTime __type="object" __classname="DateTime">2026-09-23T12:24:21+02:00</lastModificationDateTime>
-      <properties>
-       <uriPathSegment __type="string">locations</uriPathSegment>
-       <title __type="string">Locations</title>
-      </properties>
-     </variant>
-     <variant sortingIndex="600" workspace="live" nodeType="Internezzo.HessMaster:Document.Locations" version="1" removed="" hidden="" hiddenInIndex="">
-      <dimensions>
-       <language>it</language>
+       <language>mul_zz</language>
       </dimensions>
       <accessRoles __type="array"/>
       <creationDateTime __type="object" __classname="DateTime">2026-09-23T12:24:21+02:00</creationDateTime>
@@ -124,25 +166,7 @@
      <node identifier="8406e17e-b0f7-6c2c-3473-30538f20f803" nodeName="main">
       <variant sortingIndex="100" workspace="live" nodeType="Neos.Neos:ContentCollection" version="1" removed="" hidden="" hiddenInIndex="">
        <dimensions>
-        <language>de</language>
-       </dimensions>
-       <accessRoles __type="array"/>
-       <creationDateTime __type="object" __classname="DateTime">2026-09-23T12:24:21+02:00</creationDateTime>
-       <lastModificationDateTime __type="object" __classname="DateTime">2026-09-23T12:24:21+02:00</lastModificationDateTime>
-       <properties/>
-      </variant>
-      <variant sortingIndex="200" workspace="live" nodeType="Neos.Neos:ContentCollection" version="1" removed="" hidden="" hiddenInIndex="">
-       <dimensions>
-        <language>fr</language>
-       </dimensions>
-       <accessRoles __type="array"/>
-       <creationDateTime __type="object" __classname="DateTime">2026-09-23T12:24:21+02:00</creationDateTime>
-       <lastModificationDateTime __type="object" __classname="DateTime">2026-09-23T12:24:21+02:00</lastModificationDateTime>
-       <properties/>
-      </variant>
-      <variant sortingIndex="300" workspace="live" nodeType="Neos.Neos:ContentCollection" version="1" removed="" hidden="" hiddenInIndex="">
-       <dimensions>
-        <language>it</language>
+        <language>mul_zz</language>
        </dimensions>
        <accessRoles __type="array"/>
        <creationDateTime __type="object" __classname="DateTime">2026-09-23T12:24:21+02:00</creationDateTime>
@@ -150,35 +174,111 @@
        <properties/>
       </variant>
      </node>
+     <node identifier="3b531128-cb50-495c-8192-b3667d2e5455" nodeName="node-ecblmhn4ma6da">
+      <variant sortingIndex="600" workspace="live" nodeType="Internezzo.HessMaster:Document.Location" version="6" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>mul_zz</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2026-09-23T12:38:03+02:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2026-10-05T15:17:00+02:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2026-10-05T15:17:00+02:00</lastPublicationDateTime>
+       <properties>
+        <uriPathSegment __type="string">location-03</uriPathSegment>
+        <sites __type="array"/>
+        <title __type="string">Location 03</title>
+        <title_de __type="string">Location 03</title_de>
+        <uriPathSegment_de __type="string">location-03</uriPathSegment_de>
+        <title_fr __type="string">Location 03</title_fr>
+        <uriPathSegment_fr __type="string">location-03</uriPathSegment_fr>
+        <title_it __type="string">Location 03</title_it>
+        <uriPathSegment_it __type="string">location-03</uriPathSegment_it>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="fb4b47bd-7643-4d69-adf4-030f4b4e6937" nodeName="node-kl4jqg1rn95kc">
+      <variant sortingIndex="700" workspace="live" nodeType="Internezzo.HessMaster:Document.Location" version="3" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>mul_zz</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2026-10-05T15:18:28+02:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2026-10-05T15:20:10+02:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2026-10-05T15:20:10+02:00</lastPublicationDateTime>
+       <properties>
+        <uriPathSegment __type="string">location-4-de</uriPathSegment>
+        <sites __type="array">
+         <entry0 __type="string">internezzo-hessnutzfahrzeuge</entry0>
+        </sites>
+        <title __type="string">Location 4 (DE)</title>
+        <title_de __type="string">Location 4 (DE)</title_de>
+        <uriPathSegment_de __type="string">location-4-de</uriPathSegment_de>
+        <title_fr __type="string">Location 4 (FR)</title_fr>
+        <uriPathSegment_fr __type="string">location-4-fr</uriPathSegment_fr>
+        <title_it __type="string">Location 4 (DE)</title_it>
+        <uriPathSegment_it __type="string">location-4-de</uriPathSegment_it>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="990a25cf-aa14-446a-ba5e-fdb52db0acbe" nodeName="node-mnqh2ejh86uww">
+      <variant sortingIndex="400" workspace="live" nodeType="Internezzo.HessMaster:Document.Location" version="5" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>mul_zz</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2026-09-23T12:25:08+02:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2026-09-23T12:43:21+02:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2026-09-23T12:43:21+02:00</lastPublicationDateTime>
+       <properties>
+        <uriPathSegment __type="string">location-01</uriPathSegment>
+        <sites __type="array">
+         <entry0 __type="string">internezzo-hessbus</entry0>
+         <entry1 __type="string">internezzo-hessnutzfahrzeuge</entry1>
+        </sites>
+        <title __type="string">Location 01</title>
+        <title_de __type="string">Location 01</title_de>
+        <uriPathSegment_de __type="string">location-01</uriPathSegment_de>
+        <title_fr __type="string">Location 01</title_fr>
+        <uriPathSegment_fr __type="string">location-01</uriPathSegment_fr>
+        <title_it __type="string">Location 01</title_it>
+        <uriPathSegment_it __type="string">location-01</uriPathSegment_it>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="5e8b36ea-c591-4c14-bb3f-949cae7f7457" nodeName="node-re4uv1y8mcb3j">
+      <variant sortingIndex="500" workspace="live" nodeType="Internezzo.HessMaster:Document.Location" version="4" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>mul_zz</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2026-09-23T12:37:20+02:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2026-10-05T15:17:00+02:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2026-10-05T15:17:00+02:00</lastPublicationDateTime>
+       <properties>
+        <uriPathSegment __type="string">location-02</uriPathSegment>
+        <sites __type="array">
+         <entry0 __type="string">internezzo-hessbus</entry0>
+         <entry1 __type="string">internezzo-hessnutzfahrzeuge</entry1>
+        </sites>
+        <title __type="string">Location 02</title>
+        <title_de __type="string">Location 02</title_de>
+        <uriPathSegment_de __type="string">location-02</uriPathSegment_de>
+        <title_fr __type="string">Location 02 (FR)</title_fr>
+        <uriPathSegment_fr __type="string">location-02</uriPathSegment_fr>
+        <title_it __type="string">Location 02</title_it>
+        <uriPathSegment_it __type="string">location-02</uriPathSegment_it>
+       </properties>
+      </variant>
+     </node>
     </node>
     <node identifier="1b05ef31-cdcd-b502-7d47-26568d423e52" nodeName="main">
      <variant sortingIndex="450" workspace="live" nodeType="Neos.Neos:ContentCollection" version="2" removed="" hidden="" hiddenInIndex="">
       <dimensions>
-       <language>de</language>
+       <language>mul_zz</language>
       </dimensions>
       <accessRoles __type="array"/>
       <creationDateTime __type="object" __classname="DateTime">2026-09-16T16:21:24+02:00</creationDateTime>
       <lastModificationDateTime __type="object" __classname="DateTime">2026-09-23T12:24:21+02:00</lastModificationDateTime>
-      <properties/>
-     </variant>
-     <variant sortingIndex="550" workspace="live" nodeType="Neos.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
-      <dimensions>
-       <language>fr</language>
-      </dimensions>
-      <accessRoles __type="array"/>
-      <creationDateTime __type="object" __classname="DateTime">2026-09-16T16:21:24+02:00</creationDateTime>
-      <lastModificationDateTime __type="object" __classname="DateTime">2026-09-23T12:24:21+02:00</lastModificationDateTime>
-      <lastPublicationDateTime __type="object" __classname="DateTime">2026-09-16T16:29:51+02:00</lastPublicationDateTime>
-      <properties/>
-     </variant>
-     <variant sortingIndex="700" workspace="live" nodeType="Neos.Neos:ContentCollection" version="3" removed="" hidden="" hiddenInIndex="">
-      <dimensions>
-       <language>it</language>
-      </dimensions>
-      <accessRoles __type="array"/>
-      <creationDateTime __type="object" __classname="DateTime">2026-09-16T16:21:24+02:00</creationDateTime>
-      <lastModificationDateTime __type="object" __classname="DateTime">2026-09-23T12:24:21+02:00</lastModificationDateTime>
-      <lastPublicationDateTime __type="object" __classname="DateTime">2026-09-16T16:29:51+02:00</lastPublicationDateTime>
       <properties/>
      </variant>
     </node>
@@ -213,6 +313,51 @@
        <title __type="string">Locations</title>
       </properties>
      </variant>
+     <node identifier="4db00576-06f5-d3f0-cfb5-63e6371a78a8" nodeName="location-5e8b36ea-c591-4c14-bb3f-949cae7f7457">
+      <variant sortingIndex="200" workspace="live" nodeType="Internezzo.HessMaster:Document.LocationReference" version="1" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2026-10-06T12:01:00+02:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2026-10-06T12:01:00+02:00</lastModificationDateTime>
+       <properties>
+        <uriPathSegment __type="string">location-02</uriPathSegment>
+        <location __type="string">5e8b36ea-c591-4c14-bb3f-949cae7f7457</location>
+        <title __type="string">Location 02</title>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="a45fe92e-49cd-6c04-65e4-4947dea1bb30" nodeName="location-990a25cf-aa14-446a-ba5e-fdb52db0acbe">
+      <variant sortingIndex="100" workspace="live" nodeType="Internezzo.HessMaster:Document.LocationReference" version="1" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2026-10-06T12:01:00+02:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2026-10-06T12:01:00+02:00</lastModificationDateTime>
+       <properties>
+        <uriPathSegment __type="string">location-01</uriPathSegment>
+        <location __type="string">990a25cf-aa14-446a-ba5e-fdb52db0acbe</location>
+        <title __type="string">Location 01</title>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="06c59a9b-396a-20da-6db6-b7021cd3c8d4" nodeName="location-fb4b47bd-7643-4d69-adf4-030f4b4e6937">
+      <variant sortingIndex="300" workspace="live" nodeType="Internezzo.HessMaster:Document.LocationReference" version="1" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2026-10-06T12:01:00+02:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2026-10-06T12:01:00+02:00</lastModificationDateTime>
+       <properties>
+        <uriPathSegment __type="string">location-4-de</uriPathSegment>
+        <location __type="string">fb4b47bd-7643-4d69-adf4-030f4b4e6937</location>
+        <title __type="string">Location 4 (DE)</title>
+       </properties>
+      </variant>
+     </node>
     </node>
     <node identifier="aba449ad-696d-92d9-3717-1d9bb698b590" nodeName="main">
      <variant sortingIndex="300" workspace="live" nodeType="Neos.Neos:ContentCollection" version="2" removed="" hidden="" hiddenInIndex="">

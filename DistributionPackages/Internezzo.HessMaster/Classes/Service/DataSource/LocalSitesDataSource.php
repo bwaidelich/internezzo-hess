@@ -4,11 +4,9 @@ declare(strict_types=1);
 namespace Internezzo\HessMaster\Service\DataSource;
 
 use Neos\ContentRepository\Domain\Model\NodeInterface;
-use Neos\ContentRepository\Domain\Utility\NodePaths;
 use Neos\Flow\Annotations as Flow;
 use Neos\Neos\Domain\Model\Site;
 use Neos\Neos\Domain\Repository\SiteRepository;
-use Neos\Neos\Domain\Service\SiteService;
 use Neos\Neos\Service\DataSource\AbstractDataSource;
 
 /**
@@ -29,12 +27,10 @@ class LocalSitesDataSource extends AbstractDataSource
     protected $siteRepository;
 
     /**
-     * Absolute path of the master "Locations" document that holds the actual location nodes
-     *
-     * @Flow\InjectConfiguration(package="Internezzo.HessMaster", path="routing.masterLocationsNodePath")
+     * @Flow\InjectConfiguration(package="Internezzo.HessMaster", path="locations.masterSiteNodeName")
      * @var string
      */
-    protected $masterLocationsNodePath;
+    protected $masterSiteNodeName;
 
     /**
      * @param NodeInterface|null $node
@@ -46,7 +42,7 @@ class LocalSitesDataSource extends AbstractDataSource
         $options = [];
         /** @var Site $site */
         foreach ($this->siteRepository->findOnline() as $site) {
-            if ($this->isMasterSite($site)) {
+            if ($site->getNodeName() === $this->masterSiteNodeName) {
                 continue;
             }
             $options[] = [
@@ -55,11 +51,5 @@ class LocalSitesDataSource extends AbstractDataSource
             ];
         }
         return $options;
-    }
-
-    private function isMasterSite(Site $site): bool
-    {
-        $siteNodePath = NodePaths::addNodePathSegment(SiteService::SITES_ROOT_PATH, $site->getNodeName());
-        return NodePaths::isSubPathOf($siteNodePath, $this->masterLocationsNodePath);
     }
 }
