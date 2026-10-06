@@ -1,0 +1,34 @@
+# Disable plugin view (until needed)
+'Neos.Neos:PluginView':
+  abstract: true
+'Neos.Neos:Document':
+  # Disallow sub documents by default (denylist => allowlist)
+  constraints:
+    nodeTypes:
+      '*': false
+      'Neos.Neos:Document': false
+      'Internezzo.ZGKS:Document.EntryPoint': false
+
+  # hide timed visibility controls and "hidden in menu" by default
+  properties:
+    _hiddenBeforeDateTime:
+      ui:
+        inspector: ~
+    _hiddenAfterDateTime:
+      ui:
+        inspector: ~
+    _hiddenInIndex:
+      ui:
+        inspector: ~
+
+# Make default mode of shortcuts "selected target" and show mode and target in creation dialog
+'Neos.Neos:Shortcut':
+  properties:
+    targetMode:
+      type: string
+      defaultValue: 'selectedTarget'
+      ui:
+        showInCreationDialog: true
+    target:
+      ui:
+        showInCreationDialog: true

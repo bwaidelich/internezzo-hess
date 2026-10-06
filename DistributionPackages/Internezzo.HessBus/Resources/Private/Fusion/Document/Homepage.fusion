@@ -1,0 +1,1 @@
+prototype(Internezzo.HessBus:Document.Homepage) < prototype(Internezzo.HessBus:Document.Page)

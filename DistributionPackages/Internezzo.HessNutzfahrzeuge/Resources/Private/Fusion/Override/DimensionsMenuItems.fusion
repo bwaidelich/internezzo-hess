@@ -1,0 +1,5 @@
+# Master locations are rendered in this site although they are not part of it, the default
+# implementation fails when calculating the item state for such nodes.
+prototype(Neos.Neos:DimensionsMenuItems) {
+  @class = 'Internezzo\\HessMaster\\Fusion\\DimensionsMenuItemsImplementation'
+}

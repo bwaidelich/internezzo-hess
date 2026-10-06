@@ -1,0 +1,18 @@
+{
+    "description": "",
+    "type": "neos-site",
+    "require": {
+        "neos/neos": "*"
+    },
+    "name": "internezzo/hessmaster",
+    "autoload": {
+        "psr-4": {
+            "Internezzo\\HessMaster\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Internezzo.HessMaster"
+        }
+    }
+}

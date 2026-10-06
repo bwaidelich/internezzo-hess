@@ -1,0 +1,30 @@
+'Internezzo.HessMaster:Document.Location':
+  superTypes:
+    'Neos.Neos:Document': true
+  ui:
+    icon: location-pin
+    label: 'Location'
+  childNodes:
+    main:
+      type: 'Neos.Neos:ContentCollection'
+  properties:
+    # Node names of the local sites (e.g. "internezzo-hessbus") this location appears in.
+    # Only locations assigned to a site are listed there and reachable as virtual sub pages
+    # of its locations overview (see Internezzo\HessMaster\Routing\LocationAwareFrontendNodeRoutePartHandler)
+    sites:
+      type: array
+      defaultValue: []
+      ui:
+        label: 'Sites'
+        help:
+          message: 'Local sites this location appears in'
+        showInCreationDialog: true
+        inspector:
+          group: document
+          position: 50
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            multiple: true
+            allowEmpty: true
+            placeholder: 'Select sites'
+            dataSourceIdentifier: 'internezzo-hessmaster-local-sites'

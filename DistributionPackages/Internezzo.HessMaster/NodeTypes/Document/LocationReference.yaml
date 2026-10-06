@@ -1,0 +1,27 @@
+# Document of a local site that references a master location (see Internezzo.HessMaster.locations.strategy 'reference').
+# Usually created and removed automatically according to the "sites" property of the master location
+# (see Internezzo\HessMaster\Service\LocationReferenceSynchronizer), but can also be created manually.
+'Internezzo.HessMaster:Document.LocationReference':
+  superTypes:
+    'Neos.Neos:Document': true
+    #'Internezzo.HessMaster:Mixin.PreventCreation': true
+    #'Internezzo.HessMaster:Mixin.PreventEdits': true
+    #'Internezzo.HessMaster:Mixin.PreventRemoval': true
+  ui:
+    icon: link
+    label: 'Location reference'
+  label: "${q(node).property('location') ? q(node).property('location').label + ' (Referenz)' : q(node).property('title') + ' (fehlende Referenz)'}"
+  properties:
+    location:
+      type: reference
+      ui:
+        label: 'Location'
+        help:
+          message: 'Master location that is rendered in place of this document'
+        showInCreationDialog: true
+        inspector:
+          group: document
+          position: 50
+          editorOptions:
+            nodeTypes: ['Internezzo.HessMaster:Document.Location']
+            startingPoint: '/sites/internezzo-hessmaster/locations'

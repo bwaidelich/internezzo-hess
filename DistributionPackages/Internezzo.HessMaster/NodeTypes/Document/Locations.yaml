@@ -1,0 +1,17 @@
+'Internezzo.HessMaster:Document.Locations':
+  superTypes:
+    'Neos.Neos:Document': true
+  ui:
+    icon: map-location
+    label: 'Locations'
+  childNodes:
+    main:
+      type: 'Neos.Neos:ContentCollection'
+  constraints:
+    nodeTypes:
+      'Internezzo.HessMaster:Document.Location': true
+  properties:
+    title:
+      defaultValue: 'Locations'
+    uriPathSegment:
+      defaultValue: 'locations'

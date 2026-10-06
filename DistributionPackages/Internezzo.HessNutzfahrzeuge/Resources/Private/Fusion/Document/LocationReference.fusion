@@ -1,0 +1,32 @@
+# Reference strategy (see Internezzo.HessMaster.locations.strategy): location reference documents are regular
+# documents of this site underneath Internezzo.HessMaster:Mixin.LocationsOverview that render the title and
+# content of the referenced master location. They are created automatically according to the "sites" property
+# of the master locations (see Internezzo\HessMaster\Service\LocationReferenceSynchronizer).
+prototype(Internezzo.HessMaster:Document.LocationReference) < prototype(Internezzo.HessNutzfahrzeuge:Document.AbstractPage) {
+  @context.locationNode = ${q(node).property('location')}
+
+  head.titleTag.content = ${locationNode ? q(locationNode).property('title') : q(node).property('title')}
+
+  body.content >
+  body.content = Neos.Fusion:Case {
+    location {
+      condition = ${locationNode != null}
+      # Render the referenced master location as if it was the current document
+      renderer = Neos.Fusion:Component {
+        @context.node = ${locationNode}
+        title = ${q(node).property('title')}
+        main = Neos.Neos:ContentCollection {
+          nodePath = 'main'
+        }
+        renderer = afx`
+          <h1>{props.title}</h1>
+          {props.main}
+        `
+      }
+    }
+    missing {
+      condition = true
+      renderer = afx`<p>Der referenzierte Standort ist nicht verfügbar.</p>`
+    }
+  }
+}

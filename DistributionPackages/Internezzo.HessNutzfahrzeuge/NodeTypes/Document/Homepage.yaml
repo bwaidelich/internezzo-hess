@@ -1,0 +1,11 @@
+'Internezzo.HessNutzfahrzeuge:Document.Homepage':
+  superTypes:
+    'Neos.Neos:Site': true
+  ui:
+    icon: home
+    label: 'Internezzo.HessNutzfahrzeuge Homepage'
+  childNodes:
+    locations:
+      type: 'Internezzo.HessNutzfahrzeuge:Document.Locations'
+    main:
+      type: 'Neos.Neos:ContentCollection'

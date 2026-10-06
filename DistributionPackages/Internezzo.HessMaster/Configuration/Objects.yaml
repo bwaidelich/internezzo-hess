@@ -1,0 +1,3 @@
+# Render master locations as virtual sub pages of the "Locations" document of every other site
+Neos\Neos\Routing\FrontendNodeRoutePartHandlerInterface:
+  className: Internezzo\HessMaster\Routing\LocationAwareFrontendNodeRoutePartHandler

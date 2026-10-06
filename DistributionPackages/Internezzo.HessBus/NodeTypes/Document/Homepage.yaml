@@ -1,0 +1,11 @@
+'Internezzo.HessBus:Document.Homepage':
+  superTypes:
+    'Neos.Neos:Site': true
+  ui:
+    icon: home
+    label: 'Internezzo.HessBus Homepage'
+  childNodes:
+    locations:
+      type: 'Internezzo.HessBus:Document.Locations'
+    main:
+      type: 'Neos.Neos:ContentCollection'

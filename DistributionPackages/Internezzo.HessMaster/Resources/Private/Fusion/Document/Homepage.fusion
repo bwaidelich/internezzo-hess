@@ -1,0 +1,1 @@
+prototype(Internezzo.HessMaster:Document.Homepage) < prototype(Internezzo.HessMaster:Document.Page)

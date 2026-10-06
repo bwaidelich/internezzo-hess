@@ -1,0 +1,12 @@
+'Internezzo.HessNutzfahrzeuge:Document.Locations':
+  superTypes:
+    'Neos.Neos:Document': true
+    'Internezzo.HessMaster:Mixin.LocationsOverview': true
+  ui:
+    icon: map-location
+    label: 'Locations'
+  properties:
+    title:
+      defaultValue: 'Locations'
+    uriPathSegment:
+      defaultValue: 'locations'

@@ -1,0 +1,17 @@
+Internezzo:
+  HessMaster:
+    routing:
+      # Absolute node path of the master "Locations" document that holds the actual location documents
+      masterLocationsNodePath: '/sites/internezzo-hessmaster/locations'
+    locations:
+      # How master locations are made available in the local sites:
+      #
+      # 'virtual':   The master location documents are rendered as virtual sub pages of each local site's
+      #              locations overview (see Internezzo\HessMaster\Routing\LocationAwareFrontendNodeRoutePartHandler).
+      #              No nodes are created in the local sites.
+      # 'reference': A "Internezzo.HessMaster:Document.LocationReference" document is created underneath each local
+      #              site's locations overview for every assigned site. Those documents reference the master location
+      #              and are kept in sync (see Internezzo\HessMaster\Service\LocationReferenceSynchronizer).
+      #              After switching, run "./flow location:syncreferences" to create references for existing locations.
+      #              Before switching back to 'virtual', run "./flow location:removereferences".
+      strategy: 'reference'

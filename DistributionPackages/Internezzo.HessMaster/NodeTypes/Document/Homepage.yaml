@@ -1,0 +1,14 @@
+'Internezzo.HessMaster:Document.Homepage':
+  superTypes:
+    'Neos.Neos:Site': true
+  ui:
+    icon: home
+    label: 'Internezzo.HessMaster Homepage'
+  childNodes:
+    locations:
+      type: 'Internezzo.HessMaster:Document.Locations'
+    main:
+      type: 'Neos.Neos:ContentCollection'
+  constraints:
+    nodeTypes:
+      'Internezzo.HessMaster:Document.Page': true

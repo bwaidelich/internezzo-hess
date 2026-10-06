@@ -1,0 +1,1 @@
+prototype(Internezzo.HessNutzfahrzeuge:Document.Page) < prototype(Internezzo.HessNutzfahrzeuge:Document.AbstractPage)

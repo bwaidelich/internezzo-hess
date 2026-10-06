@@ -1,0 +1,12 @@
+privilegeTargets:
+  'Neos\ContentRepository\Security\Authorization\Privilege\Node\CreateNodePrivilege':
+    'Internezzo.HessMaster.PreventCreation':
+      matcher: createdNodeIsOfType("Internezzo.HessMaster:Mixin.PreventCreation")
+
+  'Neos\ContentRepository\Security\Authorization\Privilege\Node\EditNodePrivilege':
+    'Internezzo.HessMaster.PreventEdits':
+      matcher: nodeIsOfType("Internezzo.HessMaster:Mixin.PreventEdits")
+
+  'Neos\ContentRepository\Security\Authorization\Privilege\Node\RemoveNodePrivilege':
+    'Internezzo.HessMaster.PreventRemoval':
+      matcher: nodeIsOfType("Internezzo.HessMaster:Mixin.PreventRemoval")
